@@ -35,6 +35,7 @@ public class Main {
                 }
             }
             else if (i%7 ==0){
+                // multiple of seven
                 num[i-1] = String.valueOf(i)+ " - multiple of seven";
             }
             else{
