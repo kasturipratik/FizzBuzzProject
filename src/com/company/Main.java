@@ -17,7 +17,6 @@ public class Main {
     }
     public static String[] fizzBuzz(){
         String num[] = new String[100];
-        int count =1;
         for(int i =1; i<=num.length;i ++){
             if(i %3 ==0){
                 if(i%5==0){
@@ -51,6 +50,7 @@ public class Main {
     public static String[] randomNum(){
        //random number object
         Random rnd = new Random();
+        int solution =0;
         // generate random number and set it to variables
         int beginning = 1+rnd.nextInt(100);
         int ending = 1+rnd.nextInt(100);
@@ -68,8 +68,20 @@ public class Main {
             content[0] = "Shazam";
             content[content.length-1] = "Shazam";
         }
+        else if((beginning - ending) <10 ){
 
-        //returning content array for the main
+            if(beginning < ending){
+                int temp = beginning;
+                beginning = ending;
+                ending = temp;
+                solution = ending- beginning;
+            }
+            else{
+                solution = beginning - ending;
+            }
+            content[0] = "This won't take long - " + String.valueOf(solution);
+            content[content.length-1] =  "This won't take long - " +String.valueOf(solution);
+        }
 
         return content;
     }
